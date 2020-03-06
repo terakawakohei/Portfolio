@@ -1,12 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <router-view />
+  </v-app>
 </template>
+
+<script>
+// @ is an alias to /src
+// import Home from '@/views/Home.vue';
+// import About from '@/views/About.vue';
+// import Gallery from '@/views/Gallery.vue';
+// import Home from '@/views/Home.vue';
+
+export default {
+  name: 'home',
+  data: function() {
+    return {
+      imageurl: require('@/assets/Orhh.jpg'),
+    };
+  },
+  components: {
+    // Home,
+  },
+};
+</script>
 
 <style>
 #app {

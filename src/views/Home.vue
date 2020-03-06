@@ -1,53 +1,46 @@
 <template>
-  <div class="home">
-    <img class="imgsize" alt="Vue logo" src="../assets/netu.png" />
-    <HelloWorld msg="Welcome to My Portfolio!!" />
-    <ShowImage
-      firstIMG="mi-ha-.png"
-      secondIMG="riamu.jpg"
-      thirdIMG="free.png"
-    />
-    <ul>
-      <li v-for="user in users" v-bind:key="user.name">{{ user.name }}</li>
-    </ul>
+  <div>
+    <Header />
+
+    <!-- <v-parallax dark :src="imageurl" height="100%" alt="top page">
+      <v-layout align-center column justify-center>
+        <h1 class="display-2 font-weight-thin mb-3">
+          Kazuki Takahashi's Portfolio
+        </h1>
+      </v-layout>
+    </v-parallax> -->
+    <v-layout row wrap>
+      <v-flex xs12 sm12>
+        <v-parallax :src="imageurl" height="3000">
+          <v-overlay absolute opacity="0.3">
+            <v-layout column align-center justify-center>
+              <h1 class="display-3 .font-weight-black">
+                Welcome to my portfoliio!!
+              </h1>
+            </v-layout>
+          </v-overlay>
+        </v-parallax>
+      </v-flex>
+    </v-layout>
+    <About />
   </div>
 </template>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-import ShowImage from '@/components/ShowImage.vue';
-
+import Header from '@/components/header.vue';
+import About from '@/components/about.vue';
 export default {
   name: 'home',
   data: function() {
     return {
-      users: [],
+      imageurl: require('@/assets/Orhh.jpg'),
     };
   },
 
   components: {
-    HelloWorld,
-    ShowImage,
-  },
-  mounted: function() {
-    axios
-      .get('https://jsonplaceholder.typicode.com/users', {
-        params: {
-          name: 'Glenna Reichert',
-        },
-      })
-      .then(response => {
-        console.log(response.data);
-        console.log(response.status);
-        console.log(response.headers);
-        console.log(response.statusText);
-        console.log(response.config);
-      })
-      .catch(response => console.log(response));
+    Header,
+    About,
   },
 };
 </script>
