@@ -1,24 +1,12 @@
-# my-project
+# ポートフォリオサイトを作ってみる
 
-## Project setup
-```
-npm install
-```
+## 概要
+Vueの練習に次サイトを作りました。
+* 用いたライブラリ
+    * Vuetify
+    * vue-gallery
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 改善点
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+作品を表示する際、urlを作品数だけ直書きしているがもっと楽な方法があると思う、、
+node.jsでassetsにある画像名を読み込むモジュール作ろうとしたけど断念
