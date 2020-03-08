@@ -3,7 +3,7 @@
     <Header />
 
     <h1 class="display-2 font-weight-black padding">
-      works
+      work
     </h1>
 
     <v-gallery :images="original"></v-gallery>
