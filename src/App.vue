@@ -16,10 +16,27 @@ export default {
   data: function() {
     return {
       imageurl: require('@/assets/Orhh.jpg'),
+      data: [],
+      message: 'Hello World',
     };
   },
   components: {
     // Home,
+  },
+  methods: {},
+  // created: function() {
+  //   var sample = require('./read_name_module.js');
+  //   this.data = sample.sanbai('./assets/');
+  //   this.message = 'Hello Vue';
+  //   console.log('created');
+  //   console.log(this);
+  // },
+  mounted() {
+    var sample = require('./read_name_module.js');
+    this.data = sample.sanbai('./assets/');
+    console.log(sample.sanbai('./assets/'));
+    this.data = [1, 2];
+    // this.$set(this.data, 3);
   },
 };
 </script>

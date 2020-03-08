@@ -13,16 +13,17 @@
       <v-flex xs12 sm12>
         <v-parallax :src="imageurl" height="3000">
           <v-overlay absolute opacity="0.3">
-            <v-layout column align-center justify-center>
-              <h1 class="display-3 .font-weight-black">
+            <v-layout column align-center justify-start>
+              <h1 class="display-3 font-weight-black bottom">
                 Welcome to my portfoliio!!
               </h1>
             </v-layout>
+            <About class="margin" />
+            <Link lass="margin" />
           </v-overlay>
         </v-parallax>
       </v-flex>
     </v-layout>
-    <About />
   </div>
 </template>
 
@@ -30,6 +31,7 @@
 // @ is an alias to /src
 import Header from '@/components/header.vue';
 import About from '@/components/about.vue';
+import Link from '@/components/link.vue';
 export default {
   name: 'home',
   data: function() {
@@ -41,12 +43,16 @@ export default {
   components: {
     Header,
     About,
+    Link,
   },
 };
 </script>
 <style>
-.imgsize {
-  width: 30%; /* 横幅を割合で指定 */
-  height: auto;
+.bottom {
+  margin-bottom: 200%;
+}
+.margin {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 </style>
